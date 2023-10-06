@@ -1,0 +1,21 @@
+// Globals
+@import "app/styles/globals.scss";
+@import "app/styles/mixins.scss";
+@import "app/styles/variables.scss";
+
+// Pages
+@import "app/app.component.scss";
+@import "app/pages/home/home.component.scss";
+@import "app/pages/about/about.component.scss";
+@import "app/pages/menu/menu.component.scss";
+@import "app/pages/products/products.component.scss";
+@import "app/pages/cart/cart.component.scss";
+@import "app/pages/contact/contact.component.scss";
+
+// Components
+@import "app/components/navbar/navbar.component.scss";
+@import "app/components/footer/footer.component.scss";
+
+// Auth
+@import "app/auth/login/login.component.scss";
+@import "app/auth/register/register.component.scss";
