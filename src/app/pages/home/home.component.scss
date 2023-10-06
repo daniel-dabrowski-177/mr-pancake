@@ -1,0 +1,34 @@
+.hero-image {
+  img {
+    min-height: 255px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero-title {
+  font-family: IngridDarling;
+  font-size: 60px;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  color: #d1ab7d;
+  margin: 0;
+}
+
+hr:nth-of-type(1) {
+  margin: 15px 0 0 0;
+}
+hr:nth-of-type(2) {
+  margin: 0 0 15px 0;
+}
+
+.our-offer {
+  .our-offer-item {
+    img {
+      min-height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
