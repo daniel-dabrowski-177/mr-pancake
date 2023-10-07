@@ -2,23 +2,29 @@
   <hr />
   <div class="container">
     <div class="logo">Mr. Pancake</div>
-    <div class="burger">
-      <img src="../../../assets/images/icons/burger-icon.svg" alt="" />
+    <div class="wrapper" *ngIf="this.menuToggle">
+      <ul>
+        <li>Home</li>
+        <li>Zamów</li>
+        <li>Menu</li>
+        <li>O Nas</li>
+        <li>Kontakt</li>
+      </ul>
+      <p>{{ imageSrc.menu }}</p>
+      <div class="icons">
+        <div class="profile-icon">
+          <img src="../../../assets/images/icons/profile-icon.svg" alt="" />
+        </div>
+        <div class="cart-icon">
+          <img src="../../../assets/images/icons/cart-icon.svg" alt="" />
+        </div>
+      </div>
     </div>
-    <ul>
-      <li>Home</li>
-      <li>Zamów</li>
-      <li>Menu</li>
-      <li>O Nas</li>
-      <li>Kontakt</li>
-    </ul>
-    <div class="icons">
-      <div class="profile-icon">
-        <img src="../../../assets/icons/profile-icon.png" alt="" />
-      </div>
-      <div class="cart-icon">
-        <img src="../../../assets/icons/cart-icon.png" alt="" />
-      </div>
+    <div class="burger" (click)="onMenuToggle()">
+      <img
+        src="{{ this.menuToggle ? imageSrc.menuClose : imageSrc.menuOpen }}"
+        alt=""
+      />
     </div>
   </div>
   <hr />
