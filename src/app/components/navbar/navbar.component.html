@@ -2,7 +2,8 @@
   <hr />
   <div class="container">
     <div class="logo">Mr. Pancake</div>
-    <div class="wrapper" *ngIf="this.menuToggle">
+    <!-- ToFix: navbar display should be switching dynamicly by manipulating width of a window -->
+    <div class="wrapper" *ngIf="this.menuToggle || windowWidth > 768">
       <ul>
         <li>Home</li>
         <li>Zamów</li>

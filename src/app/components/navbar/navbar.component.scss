@@ -19,6 +19,7 @@ nav {
       font-family: IngridDarling;
       font-size: 48px;
       color: #d1ab7d;
+      cursor: pointer;
     }
     .wrapper {
       display: flex;
@@ -35,6 +36,7 @@ nav {
       ul {
         display: flex;
         flex-direction: column;
+        font-family: PirataOne;
         gap: 35px;
         padding: 120px 0 0;
         text-transform: uppercase;
@@ -48,7 +50,14 @@ nav {
       }
 
       .icons {
-        gap: 20px;
+        gap: 15px;
+
+        .profile-icon {
+          cursor: pointer;
+        }
+        .cart-icon {
+          cursor: pointer;
+        }
       }
     }
     .burger {
@@ -62,6 +71,11 @@ nav {
     ul {
       list-style: none;
       display: flex;
+      li {
+        letter-spacing: 1px;
+        font-weight: normal;
+        font-size: 24px;
+      }
     }
     .icons {
       display: flex;
@@ -79,6 +93,64 @@ nav {
           height: 35px;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  nav {
+    .logo {
+      flex: 1;
+    }
+    .container {
+      .wrapper {
+        display: flex;
+        align-items: center;
+        position: unset;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        text-align: center;
+        background-color: transparent;
+
+        ul {
+          display: flex;
+          flex-direction: row;
+          gap: none;
+          padding: 0;
+          text-transform: none;
+          color: D1AB7D;
+
+          li {
+            font-weight: normal;
+            font-size: 18px;
+          }
+        }
+
+        .icons {
+          justify-content: space-between;
+          margin-left: 5vw;
+        }
+      }
+      .burger {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    .container {
+      margin: auto 50px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  nav {
+    .container {
+      margin: auto 100px;
     }
   }
 }
