@@ -34,3 +34,39 @@ hr {
   border: none;
   margin: 15px 0;
 }
+
+input {
+  height: 38px;
+  background-color: #333333;
+  opacity: 0.8;
+  border-radius: 10px;
+  border: none;
+  border-bottom: 2px solid #d1ab7d;
+  margin: 10px 0 0 0;
+}
+
+label {
+  margin: 5px 0 0 10px;
+  font-family: PirataOne;
+  font-size: 16px;
+  text-align: left;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+  background-color: #d1ab7d;
+  max-width: 140px;
+  margin: auto;
+  font-family: PirataOne;
+  font-size: 20px;
+  padding: 12px 30px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e7af6b;
+}

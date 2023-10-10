@@ -16,13 +16,11 @@
   margin: 0;
 }
 
-hr:nth-of-type(1) {
-  margin: 15px 0 0;
+.hr-title:nth-of-type(1) {
+  margin: 15px 0 0 0;
 }
-hr:nth-of-type(2) {
-  margin: 0;
-}
-hr:nth-of-type(3) {
+
+.hr-title:nth-of-type(2) {
   margin: 0;
 }
 
@@ -63,6 +61,82 @@ hr:nth-of-type(3) {
   }
 }
 
+span:nth-of-type(2) {
+  color: white;
+  font-size: 24px;
+  font-family: PirataOne;
+  margin: 0 0 0 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.book-a-table {
+  background-image: url(../../../assets/images/background/order.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+
+  h2 {
+    color: #d1ab7d;
+    font-family: PirataOne;
+    font-size: 36px;
+    margin: 40px auto 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 290px;
+    margin: auto;
+
+    .input-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-item-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .input-item {
+        max-width: 84px;
+      }
+    }
+
+    .input-item-message {
+      display: flex;
+      flex-direction: column;
+      input {
+        min-height: 92px;
+      }
+    }
+
+    .input-item-checkbox {
+      display: flex;
+      margin: 10px 0 0 0;
+      input {
+        margin: 0;
+        min-width: 20px;
+        min-height: 20px;
+        border: none;
+        outline: none;
+      }
+    }
+
+    button {
+      margin: 15px auto 25px;
+    }
+  }
+}
+
 @media (min-width: 375px) {
   .our-offer {
     display: flex;
@@ -87,6 +161,10 @@ hr:nth-of-type(3) {
       }
     }
   }
+
+  span:nth-of-type(2) {
+    font-size: 28px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -94,7 +172,7 @@ hr:nth-of-type(3) {
     gap: 35px;
     .our-offer-title {
       font-size: 32px;
-      margin: 35px 0;
+      margin: 35px 0 0 0;
     }
     .our-offer-item {
       flex-direction: row;
@@ -108,6 +186,10 @@ hr:nth-of-type(3) {
       }
     }
   }
+
+  span:nth-of-type(2) {
+    font-size: 32px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -117,11 +199,11 @@ hr:nth-of-type(3) {
       width: 100%;
       margin: 0;
       justify-content: center;
-
+      align-items: flex-start;
       img {
         width: 40%;
         max-width: 455px;
-        margin: 0;
+        margin: 25px 0 0 0;
       }
       .text-container {
         margin: 0 40px;
