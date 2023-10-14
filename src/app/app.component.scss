@@ -35,17 +35,26 @@ hr {
   margin: 15px 0;
 }
 
-input {
-  height: 38px;
+input,
+textarea {
   background-color: #333333;
   opacity: 0.8;
   border-radius: 10px;
   border: none;
   border-bottom: 2px solid #d1ab7d;
   margin: 10px 0 0 0;
-  width: 100%;
+  width: calc(100% - 10px);
   color: white;
   font-size: 14px;
+  padding: 10px;
+}
+
+input {
+  height: 18px;
+}
+
+input:focus {
+  outline: none;
 }
 
 label {
@@ -74,8 +83,37 @@ button:hover {
   background-color: #e7af6b;
 }
 
+h2 {
+  color: #d1ab7d;
+  font-family: PirataOne;
+  font-size: 36px;
+  margin: 40px auto 20px;
+}
+
+h3 {
+  color: white;
+  font-family: PirataOne;
+  font-size: 28px;
+  margin: 40px auto 20px;
+}
+
 @media (min-width: 768px) {
   input {
     margin: 15px 0 0 0;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 20px;
   }
 }

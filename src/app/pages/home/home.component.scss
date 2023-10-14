@@ -28,15 +28,6 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-
-  .our-offer-title {
-    display: flex;
-    justify-content: center;
-    font-family: PirataOne;
-    font-size: 24px;
-    margin: 15px 0;
-    color: #d1ab7d;
-  }
   .our-offer-item {
     img {
       width: 100%;
@@ -61,17 +52,8 @@
   }
 }
 
-span:nth-of-type(2) {
-  color: white;
-  font-size: 24px;
-  font-family: PirataOne;
-  margin: 0 0 0 24px;
-  display: flex;
-  justify-content: center;
-}
-
 .book-a-table {
-  background-image: url(../../../assets/images/background/order.png);
+  background-image: url(../../../assets/images/background/contact.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -81,13 +63,6 @@ span:nth-of-type(2) {
   flex-direction: column;
   text-align: center;
   margin: auto;
-
-  h2 {
-    color: #d1ab7d;
-    font-family: PirataOne;
-    font-size: 36px;
-    margin: 40px auto 20px;
-  }
 
   form {
     display: flex;
@@ -136,7 +111,7 @@ span:nth-of-type(2) {
         width: 20px;
         height: 20px;
         margin: 2px 0 0 0;
-        border: 0 solid #272727;
+        border: 3px solid #272727;
         border-radius: 5px;
         background-color: #272727;
         opacity: 0.8;
@@ -148,12 +123,67 @@ span:nth-of-type(2) {
       }
 
       label {
-        margin: 0 0 0 30px;
+        margin: 0 0 0 35px;
       }
     }
 
     button {
       margin: 15px auto 25px;
+    }
+  }
+}
+
+.reservations {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 24px;
+  margin: auto;
+  max-width: 530px;
+
+  span {
+    font-size: 20px;
+    font-family: PirataOne;
+    color: #d1ab7d;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 0 0;
+
+    .wrapper {
+      margin: 0 0 0 15px;
+      display: flex;
+      gap: 30px;
+      color: white;
+      font-size: 24px;
+      font-family: PirataOne;
+      padding: 0 30px 0 0;
+    }
+  }
+  p {
+    font-size: 20px;
+    font-family: PirataOne;
+    color: #d1ab7d;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 0 25px 0;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      div {
+        margin: 0 0 0 15px;
+        font-size: 24px;
+        color: white;
+        font-family: PirataOne;
+      }
     }
   }
 }
@@ -197,14 +227,6 @@ span:nth-of-type(2) {
     }
     .our-offer-item {
       flex-direction: row;
-      .text-container {
-        h2 {
-          font-size: 32px;
-        }
-        p {
-          font-size: 20px;
-        }
-      }
     }
   }
 
@@ -277,17 +299,51 @@ span:nth-of-type(2) {
       }
       .text-container {
         margin: 0 40px;
-        h2 {
-          font-size: 36px;
-        }
-        p {
-          font-size: 20px;
-        }
       }
     }
     .our-offer-item:nth-of-type(2),
     .our-offer-item:nth-of-type(4) {
       flex-direction: row-reverse;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .reservation-wrapper {
+    display: flex;
+    background-image: url(../../../assets/images/background/contact.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .book-a-table {
+      margin: 0 auto 85px;
+      background-image: none;
+      flex: 1;
+      position: relative;
+
+      button {
+        position: absolute;
+        right: 0;
+        bottom: -50px;
+        margin: auto;
+      }
+    }
+
+    .reservations {
+      margin: 0 auto;
+      justify-content: start;
+      flex: 1;
+      h2 {
+        margin: 40px 0 0 0;
+      }
+      .container {
+        justify-content: start;
+        margin: 25px 0 0 0;
+      }
+      span {
+        margin: 40px 0 0 0;
+      }
     }
   }
 }
