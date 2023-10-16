@@ -194,8 +194,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    // max-width: 530px;
-    max-width: 350px;
+    max-width: 530px;
+    // max-width: 350px;
     padding: 0 24px;
   }
   h2 {
@@ -235,6 +235,93 @@
         white-space: nowrap;
         max-width: none;
       }
+    }
+  }
+}
+
+.testimonials {
+  margin: 0 0 25px 0;
+  .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 350px;
+    padding: 0 24px;
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .testimonial-card {
+        background-color: #333333;
+        opacity: 0.8;
+        border-radius: 20px;
+        padding: 35px;
+
+        p {
+          margin: 0;
+          font-family: OpenSans;
+          font-size: 16px;
+          color: white;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          margin: 20px 0 0 0;
+
+          img {
+            margin: 0 15px 0 0;
+          }
+
+          .user-name {
+            color: #d1ab7d;
+            font-family: OpenSans;
+            font-weight: bold;
+          }
+          .user-desc {
+            font-family: OpenSans;
+            margin: 6px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.share {
+  padding: 0 24px;
+  margin: 20px auto 0;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+
+        input,
+        textarea {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          max-width: 530px;
+          min-width: 300px;
+        }
+      }
+    }
+    button {
+      margin: 25px auto 10px;
     }
   }
 }
@@ -355,6 +442,23 @@
     .our-offer-item:nth-of-type(2),
     .our-offer-item:nth-of-type(4) {
       flex-direction: row-reverse;
+    }
+  }
+
+  .testimonials {
+    .container {
+      margin: 0 auto;
+      flex-wrap: wrap;
+      max-width: none;
+      padding: 0 50px;
+      .wrapper {
+        justify-content: center;
+        flex-direction: row;
+        gap: 35px;
+        .testimonial-card {
+          max-width: 300px;
+        }
+      }
     }
   }
 }
