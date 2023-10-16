@@ -70,7 +70,6 @@ button {
   outline: none;
   color: white;
   background-color: #d1ab7d;
-  max-width: 140px;
   margin: auto;
   font-family: PirataOne;
   font-size: 20px;
@@ -95,6 +94,12 @@ h3 {
   font-family: PirataOne;
   font-size: 28px;
   margin: 40px auto 20px;
+}
+
+p {
+  font-size: 20px;
+  font-family: PirataOne;
+  color: #d1ab7d;
 }
 
 @media (min-width: 768px) {
