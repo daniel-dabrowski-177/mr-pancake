@@ -20,6 +20,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+import { MapComponent } from './components/map/map.component';
 
 // Services
 import { AuthService } from './services/auth/auth.service';
@@ -38,6 +39,7 @@ import { ProductsService } from './services/products/products.service';
     NavbarComponent,
     RegisterComponent,
     LoginComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

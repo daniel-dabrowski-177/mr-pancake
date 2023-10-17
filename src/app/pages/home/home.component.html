@@ -236,26 +236,33 @@
     </div>
   </section>
   <hr />
-  <section class="share">
-    <div class="container">
-      <h2>Podziel się swoją opinią</h2>
-      <form>
-        <div>
-          <input type="text" />
-          <label for="">imię</label>
-        </div>
-        <div>
-          <textarea
-            name="share-message"
-            id="message"
-            cols="30"
-            rows="5"
-          ></textarea>
-          <label for="share-message">wiadomość</label>
-        </div>
-        <button>Wyślij</button>
-      </form>
-    </div>
-  </section>
-  <hr />
+  <div class="testimonial-wrapper">
+    <section class="share">
+      <div class="container">
+        <h2>Podziel się swoją opinią</h2>
+        <form>
+          <div>
+            <input type="text" />
+            <label for="">imię</label>
+          </div>
+          <div>
+            <textarea
+              name="share-message"
+              id="message"
+              cols="30"
+              rows="5"
+            ></textarea>
+            <label for="share-message">wiadomość</label>
+          </div>
+          <button>Wyślij</button>
+        </form>
+      </div>
+    </section>
+    <hr />
+    <section class="map">
+      <h2>Wpadnij do nas!</h2>
+      <app-map></app-map>
+      <p>Mr. Pancake - Kraków, ul. Woźna 2</p>
+    </section>
+  </div>
 </main>
