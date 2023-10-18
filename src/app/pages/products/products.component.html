@@ -1,23 +1,20 @@
 <div class="products-container">
   <h2>Zamów teraz!</h2>
 
-  <div class="products-wrapper">
-    <div class="product-item">
+  <ul class="products-wrapper">
+    <li class="product-item" *ngFor="let product of products">
       <div class="product-container">
         <div class="col-1">
           <div class="product-img">
-            <img
-              src="../../../assets/images/pancakes/straweberry-sm.png"
-              alt=""
-            />
+            <img src="{{ product.src }}" alt="" />
           </div>
           <div class="product-price">
             <p>Cena</p>
-            <p>31.00 zł/szt.</p>
+            <p>{{ product.price }} zł</p>
           </div>
         </div>
         <div class="col-2">
-          <h3>Naleśnik truskawkowy</h3>
+          <h3>{{ product.name }}</h3>
           <p>
             Nasz niebiański naleśnik truskawkowy to prawdziwa uczta dla
             podniebienia. Delikatny naleśnik, cienko usmażony na złocistą
@@ -35,6 +32,6 @@
       <div class="product-info">
         Produkt został pomyślnie dodany do koszyka. Dziękujemy :)
       </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </div>

@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 // AngularFire
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { environment } from 'src/environments/environment';
 
 // Components
 import { FooterComponent } from './components/footer/footer.component';
@@ -25,6 +24,10 @@ import { MapComponent } from './components/map/map.component';
 // Services
 import { AuthService } from './services/auth/auth.service';
 import { ProductsService } from './services/products/products.service';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { ProductsService } from './services/products/products.service';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [AuthService, ProductsService],
   bootstrap: [AppComponent],
