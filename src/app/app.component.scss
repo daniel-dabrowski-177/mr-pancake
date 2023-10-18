@@ -47,6 +47,7 @@ textarea {
   color: white;
   font-size: 14px;
   padding: 10px;
+  outline: none;
 }
 
 input {
@@ -87,7 +88,7 @@ h2 {
   font-family: PirataOne;
   font-size: 36px;
   margin: 40px auto 20px;
-  padding: 0 24px;
+  font-weight: normal;
 }
 
 h3 {
@@ -95,6 +96,7 @@ h3 {
   font-family: PirataOne;
   font-size: 28px;
   margin: 40px auto 20px;
+  font-weight: normal;
 }
 
 p {

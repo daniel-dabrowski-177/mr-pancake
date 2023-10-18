@@ -28,6 +28,11 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  h2 {
+    text-align: center;
+    padding: 0 24px;
+  }
   .our-offer-item {
     img {
       width: 100%;
