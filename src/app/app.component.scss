@@ -110,6 +110,11 @@ a {
   color: #d1ab7d;
 }
 
+a:hover {
+  color: white;
+  transition: color 0.3s ease;
+}
+
 @media (min-width: 768px) {
   input {
     margin: 15px 0 0 0;

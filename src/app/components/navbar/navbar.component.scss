@@ -23,6 +23,12 @@ nav {
       color: #d1ab7d;
       cursor: pointer;
     }
+
+    .logo:hover {
+      color: white;
+      transition: color 0.3s ease;
+    }
+
     .wrapper {
       display: flex;
       align-items: center;
@@ -101,9 +107,6 @@ nav {
 
 @media (min-width: 768px) {
   nav {
-    .logo {
-      flex: 1;
-    }
     .container {
       .wrapper {
         display: flex;

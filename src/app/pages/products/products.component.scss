@@ -97,7 +97,14 @@
 
       .add-to-cart:hover {
         opacity: 0.8;
-        border: 2px solid #d1ab7d;
+        .cart-add-icon {
+          img {
+            border: 2px solid white;
+          }
+        }
+        p {
+          color: white;
+        }
       }
       .product-info {
         display: flex;
