@@ -5,11 +5,21 @@
     <!-- ToFix: navbar display should be switching dynamicly by manipulating width of a window -->
     <div class="wrapper" *ngIf="this.menuToggle || windowWidth > 768">
       <ul>
-        <li>Home</li>
-        <li>Zamów</li>
-        <li>Menu</li>
-        <li>O Nas</li>
-        <li>Kontakt</li>
+        <a href="/">
+          <li>Home</li>
+        </a>
+        <a href="/products">
+          <li>Zamów</li>
+        </a>
+        <a href="/menu">
+          <li>Menu</li>
+        </a>
+        <a href="/about">
+          <li>O Nas</li>
+        </a>
+        <a href="/contact">
+          <li>Kontakt</li>
+        </a>
       </ul>
       <p>{{ imageSrc.menu }}</p>
       <div class="icons">
