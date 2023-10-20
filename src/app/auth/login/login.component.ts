@@ -7,5 +7,15 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService) {
+    console.log('testing service -> ' + this.auth.email);
+  }
+
+  click() {
+    this.auth.login();
+  }
+
+  isUser() {
+    console.log(this.auth.user);
+  }
 }
