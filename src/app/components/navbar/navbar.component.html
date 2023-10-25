@@ -25,8 +25,8 @@
       </ul>
       <p>{{ imageSrc.menu }}</p>
       <div class="icons">
-        <div class="profile-icon">
-          <img src="../../../assets/images/icons/profile-icon.svg" alt="" />
+        <div class="greetings">
+          <b (click)="logout()">{{ user ? user.email : "Log in" }}</b>
         </div>
         <div class="cart-icon">
           <img src="../../../assets/images/icons/cart-icon.svg" alt="" />

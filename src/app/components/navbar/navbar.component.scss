@@ -59,9 +59,12 @@ nav {
 
       .icons {
         gap: 15px;
+        display: flex;
+        align-items: center;
 
-        .profile-icon {
-          cursor: pointer;
+        .greetings {
+          font-family: OpenSans;
+          color: white;
         }
         .cart-icon {
           cursor: pointer;

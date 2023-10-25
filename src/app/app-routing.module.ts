@@ -9,6 +9,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 
+const user = true;
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },

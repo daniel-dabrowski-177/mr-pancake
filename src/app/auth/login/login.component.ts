@@ -7,15 +7,24 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private auth: AuthService) {
-    console.log('testing service -> ' + this.auth.email);
+  constructor(private auth: AuthService) {}
+  data = 'Data from component';
+  user = this.auth.user;
+
+  login(f: any) {
+    this.auth.login(f);
+    // console.log(f.value.email);
+    // console.log(f.value.password);
+    // console.log(this.auth.email);
   }
 
-  click() {
-    this.auth.login();
+  sendDataToService(data: any, f: any) {
+    this.auth.sendData(data, f);
   }
 
-  isUser() {
-    console.log(this.auth.user);
+  getUser() {
+    if (!this.auth.returnUser()) {
+      console.log('no user');
+    } else console.log(this.auth.returnUser().stringify());
   }
 }

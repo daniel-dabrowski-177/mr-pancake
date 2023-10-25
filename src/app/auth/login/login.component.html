@@ -1,16 +1,17 @@
 <div class="login-container">
   <h2>Zaloguj się</h2>
-  <form>
+  <form #f="ngForm" (ngSubmit)="login(f)">
     <div>
-      <input type="text" name="email" />
+      <input type="text" name="email" ngModel />
       <label for="email">email</label>
     </div>
     <div>
-      <input type="password" name="password" />
+      <input type="password" name="password" ngModel />
       <label for="password">hasło</label>
     </div>
-    <button type="submit">Zaloguj</button>
+    <button type="submit" (click)="login(f)">Login</button>
   </form>
 </div>
-<button (click)="click()">Login</button>
-<button (click)="isUser()">isUser</button>
+
+<span *ngIf="user">You have succesfully logged in!</span>
+<button (click)="getUser()">logUser</button>
