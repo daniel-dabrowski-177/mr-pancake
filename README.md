@@ -6,7 +6,7 @@ Mr. Pancake is an original restaurant-themed web application. It is the restau
 
 # Live version of a project
 
-Live preview --> https://caster-cookie-landing-page.netlify.app
+Live preview --> https://mr-pancake.netlify.app
 
 # Technology Stack
 
