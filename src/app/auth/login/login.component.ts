@@ -13,13 +13,6 @@ export class LoginComponent {
 
   login(f: any) {
     this.auth.login(f);
-    // console.log(f.value.email);
-    // console.log(f.value.password);
-    // console.log(this.auth.email);
-  }
-
-  sendDataToService(data: any, f: any) {
-    this.auth.sendData(data, f);
   }
 
   getUser() {
