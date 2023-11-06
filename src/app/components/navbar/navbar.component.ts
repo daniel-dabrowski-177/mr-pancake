@@ -26,11 +26,5 @@ export class NavbarComponent {
     this.menuToggle == false
       ? (this.menuToggle = true)
       : (this.menuToggle = false);
-
-    // Testing navigation functionality
-    console.log(this.windowWidth);
-    console.log(this.menuToggle);
-    console.log(this.imageSrc.menuOpen);
-    console.log(this.imageSrc.menuClose);
   }
 }

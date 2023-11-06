@@ -64,7 +64,13 @@ nav {
 
         .greetings {
           font-family: OpenSans;
+          color: #d1ab7d;
+          cursor: pointer;
+        }
+
+        .greetings:hover {
           color: white;
+          transition: color 0.3s ease;
         }
         .cart-icon {
           cursor: pointer;
