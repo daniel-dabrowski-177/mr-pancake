@@ -7,17 +7,25 @@ import { ProductsService } from 'src/app/services/products/products.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  products!: any[];
+  products: any[] = [];
+  cartArr: any[] = [];
 
   constructor(private productService: ProductsService) {}
 
   ngOnInit() {
     this.productService.getProducts().subscribe((data) => {
-      this.products = data;
+      this.products = data.map((product) => ({
+        ...product,
+        addedToCart: false,
+      }));
     });
   }
 
-  productAdd() {
-    console.log('Product added to cart!');
+  productAdd(product: any) {
+    if (!product.addedToCart) {
+      this.cartArr.push(product);
+      product.addedToCart = true;
+      console.log(this.cartArr);
+    }
   }
 }
