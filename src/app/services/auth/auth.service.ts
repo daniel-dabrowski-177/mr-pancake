@@ -5,8 +5,6 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   providedIn: 'root',
 })
 export class AuthService {
-  // email: string = 'sample1@gmail.com';
-  // password: string = '123456';
   user: any = localStorage.getItem('user');
 
   returnUser() {
@@ -24,17 +22,14 @@ export class AuthService {
     this.angularFireAuth
       .signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        // User successfully logged in
         user = userCredential.user;
         console.log('Logged in user:', user?.email);
         console.log(userCredential);
-        // user.stringify
         user = JSON.stringify(user);
         localStorage.setItem('user', user);
         location.href = '/';
       })
       .catch((error) => {
-        // Handle login error
         console.error('Login error:', error);
       });
   }
@@ -47,7 +42,6 @@ export class AuthService {
         location.href = '/login';
       })
       .catch((error) => {
-        // Handle logout error
         console.error('Logout error:', error);
       });
   }
@@ -64,13 +58,5 @@ export class AuthService {
       .catch((err) => {
         console.log(err);
       });
-  }
-
-  // Testing
-  sendData(data: any, f: any) {
-    console.log(data);
-    console.log(f.value.email + ' Heloo');
-    console.log(f.value.email);
-    console.log(f.value.password);
   }
 }

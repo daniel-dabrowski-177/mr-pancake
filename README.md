@@ -117,7 +117,17 @@ To execute the end-to-end tests via a platform of your choice, run:
 ng e2e
 ```
 To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<<<<<<< HEAD
 
 # Final Project Presentation:
 
 ![](https://github.com/daniel-dabrowski-177/mr-pancake-preview/blob/main/mr-pancake-preview.png)
+=======
+
+# Final Project Presentation:
+
+![](https://github.com/daniel-dabrowski-177/mr-pancake-preview/blob/main/mr-pancake-preview.png)
+
+
+
+>>>>>>> test
