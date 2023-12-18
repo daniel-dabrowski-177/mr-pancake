@@ -13,4 +13,9 @@ describe('AuthService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should add two numbers', () => {
+    const result = service.add(3, 4);
+    expect(result).toBe(7);
+  });
 });

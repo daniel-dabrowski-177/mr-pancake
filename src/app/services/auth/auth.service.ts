@@ -59,4 +59,8 @@ export class AuthService {
         console.log(err);
       });
   }
+
+  add(a: number, b: number): number {
+    return a + b;
+  }
 }
