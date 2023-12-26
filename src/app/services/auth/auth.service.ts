@@ -23,8 +23,6 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         user = userCredential.user;
-        console.log('Logged in user:', user?.email);
-        console.log(userCredential);
         user = JSON.stringify(user);
         localStorage.setItem('user', user);
         location.href = '/';
@@ -58,9 +56,5 @@ export class AuthService {
       .catch((err) => {
         console.log(err);
       });
-  }
-
-  add(a: number, b: number): number {
-    return a + b;
   }
 }

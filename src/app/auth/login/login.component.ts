@@ -15,9 +15,7 @@ export class LoginComponent {
     this.auth.login(f);
   }
 
-  getUser() {
-    if (!this.auth.returnUser()) {
-      console.log('no user');
-    } else console.log(this.auth.returnUser().stringify());
+  logUser() {
+    console.log(this.auth.returnUser());
   }
 }
