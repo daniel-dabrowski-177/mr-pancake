@@ -14,3 +14,16 @@
     justify-content: center;
   }
 }
+
+.register-info {
+  display: flex;
+  justify-content: center;
+  font-family: OpenSans;
+  margin: 30px 0 0 0;
+  font-size: 16px;
+  color: rgb(176, 42, 53);
+}
+
+.register-success {
+  color: rgb(58, 176, 42);
+}

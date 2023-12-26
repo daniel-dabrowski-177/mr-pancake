@@ -13,4 +13,19 @@
     display: flex;
     justify-content: center;
   }
+
+  .register-now {
+    margin: 30px 0 0 0;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 5px;
+
+    p,
+    a {
+      margin: 0;
+      font-family: OpenSans;
+      font-size: 20px;
+    }
+  }
 }

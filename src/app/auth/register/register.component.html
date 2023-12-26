@@ -9,8 +9,20 @@
       <input type="password" name="password" ngModel />
       <label for="password">hasło</label>
     </div>
-    <button type="submit" (click)="register(f)">Login</button>
+    <div>
+      <input type="password" name="confPassword" ngModel />
+      <label for="confPassword">powtórz hasło</label>
+    </div>
+    <button type="submit" (click)="register(f)">Zarejestruj</button>
   </form>
 </div>
+<span class="register-info register-success" *ngIf="user"
+  >Registration succeed!</span
+>
+<span class="register-info" *ngIf="userErr">
+  The email address is already in use by another account.
+</span>
 
-<span *ngIf="user">Registration succeed!</span>
+<span class="register-info" *ngIf="userCred"
+  >Passwords are not the same! Please check your password</span
+>

@@ -11,7 +11,12 @@
     </div>
     <button type="submit" (click)="login(f)">Login</button>
   </form>
+  <div class="register-now">
+    <p>Nie posiadasz jeszcze konta?</p>
+    <b><a href="/register">Zarejestruj się!</a></b>
+  </div>
 </div>
 
 <span *ngIf="user">You have succesfully logged in!</span>
-<button (click)="logUser()">logUser</button>
+
+<span class="register-info" *ngIf="userErr">Incorrect Credentials!</span>

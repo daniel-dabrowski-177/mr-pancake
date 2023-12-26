@@ -6,6 +6,16 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AuthService {
   user: any = localStorage.getItem('user');
+  private _userErr: boolean = false;
+  private _userCred: boolean = false;
+
+  get userErr(): boolean {
+    return this._userErr;
+  }
+
+  get userCred(): boolean {
+    return this._userCred;
+  }
 
   returnUser() {
     let user = JSON.parse(this.user);
@@ -28,7 +38,13 @@ export class AuthService {
         location.href = '/';
       })
       .catch((error) => {
-        console.error('Login error:', error);
+        if (error.message.includes('auth/invalid-login-credentials')) {
+          console.log('auth/invalid-login-credentials');
+          this._userErr = true;
+        } else {
+          console.error('Unknown error:', error.message);
+          this._userErr = false;
+        }
       });
   }
 
@@ -47,14 +63,35 @@ export class AuthService {
   register(f: any) {
     let email: string = f.value.email;
     let password: string = f.value.password;
+    let confPassword: string = f.value.confPassword;
 
-    this.angularFireAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    this._userErr = false;
+    this._userCred = false;
+
+    if (password == confPassword) {
+      this.angularFireAuth
+        .createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          location.href = '/login';
+        })
+        .catch((error) => {
+          if (
+            error.message.includes(
+              'The email address is already in use by another account'
+            )
+          ) {
+            console.log(
+              'Błąd: Adres e-mail jest już używany przez inne konto.'
+            );
+            this._userErr = true;
+          } else {
+            console.error('Unknown error:', error.message);
+            this._userErr = false;
+          }
+        });
+    } else {
+      console.log('Passwords are not the same!');
+      this._userCred = true;
+    }
   }
 }

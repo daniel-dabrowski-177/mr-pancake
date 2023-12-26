@@ -8,14 +8,13 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class LoginComponent {
   constructor(private auth: AuthService) {}
-  data = 'Data from component';
   user = this.auth.user;
+
+  get userErr(): boolean {
+    return this.auth.userErr;
+  }
 
   login(f: any) {
     this.auth.login(f);
-  }
-
-  logUser() {
-    console.log(this.auth.returnUser());
   }
 }
