@@ -115,6 +115,13 @@ a:hover {
   transition: color 0.3s ease;
 }
 
+.information {
+  margin: 50px 0 0 0;
+  justify-content: center;
+  display: flex;
+  font-family: OpenSans;
+}
+
 @media (min-width: 768px) {
   input {
     margin: 15px 0 0 0;
