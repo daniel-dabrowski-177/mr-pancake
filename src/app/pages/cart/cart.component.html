@@ -1,2 +1,33 @@
-<p>cart works!</p>
-<div class="information">We are currently working on this page...</div>
+<div class="cart-page">
+  <h2>Zamów teraz!</h2>
+
+  <ul class="cart-wrapper">
+    <li class="cart-item" *ngFor="let cartItem of cartItems">
+      <div class="cart-container">
+        <div class="product-img">
+          <img src="{{ cartItem.src }}" alt="" />
+        </div>
+        <div class="details">
+          <div class="row-1">
+            <h4>{{ cartItem.name }}</h4>
+            <button>
+              <img
+                src="../../../assets/images/icons/cart-remove-icon.svg"
+                alt="remove item"
+              />
+            </button>
+          </div>
+          <div class="row-2">
+            <p>Ilość:</p>
+            <div class="counter">
+              <button (click)="increment(cartItem)">+</button>
+              <div class="amount">{{ cartItem.quantity || 0 }}</div>
+              <button (click)="decrement(cartItem)">-</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <button>Zamów</button>
+</div>

@@ -1,0 +1,103 @@
+.cart-page {
+  margin: 100px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .cart-wrapper {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .cart-item {
+      display: flex;
+      margin: 20px 0;
+      background-color: #313131;
+      opacity: 0.85;
+
+      .cart-container {
+        display: flex;
+        padding: 10px;
+        width: 100%;
+
+        .product-img {
+          border: 2px solid #d1ab7d;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+        .details {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          margin: 0 0 0 15px;
+
+          .row-1,
+          .row-2 {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          .row-1 {
+            margin: 0;
+
+            h4 {
+              margin: 0;
+              font-size: 20px;
+              font-family: OpenSans;
+              color: #d1ab7d;
+            }
+            button {
+              margin: 0;
+              padding: 0;
+              width: 35px;
+              height: 35px;
+              background-color: transparent;
+            }
+          }
+          .row-2 {
+            display: flex;
+            margin: 0 50px 0 0;
+
+            p {
+              font-size: 20px;
+              font-family: OpenSans;
+              color: #d1ab7d;
+            }
+            .counter {
+              display: flex;
+
+              button {
+                background-color: transparent;
+                border: solid 2px #d1ab7d;
+                padding: 0;
+                width: 40px;
+              }
+
+              .amount {
+                width: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: PirataOne;
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

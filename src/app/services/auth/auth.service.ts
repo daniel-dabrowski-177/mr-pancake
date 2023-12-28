@@ -8,6 +8,7 @@ export class AuthService {
   user: any = localStorage.getItem('user');
   private _userErr: boolean = false;
   private _userCred: boolean = false;
+  private isLoggedIn: boolean = false;
 
   get userErr(): boolean {
     return this._userErr;
@@ -24,7 +25,7 @@ export class AuthService {
 
   constructor(private angularFireAuth: AngularFireAuth) {}
 
-  login(f: any) {
+  login(f: any): void {
     let email: string = f.value.email;
     let password: string = f.value.password;
     let user: any;
@@ -35,6 +36,7 @@ export class AuthService {
         user = userCredential.user;
         user = JSON.stringify(user);
         localStorage.setItem('user', user);
+        this.isLoggedIn = true;
         location.href = '/';
       })
       .catch((error) => {
@@ -48,7 +50,7 @@ export class AuthService {
       });
   }
 
-  logout() {
+  logout(): void {
     this.angularFireAuth
       .signOut()
       .then(() => {
@@ -58,6 +60,7 @@ export class AuthService {
       .catch((error) => {
         console.error('Logout error:', error);
       });
+    this.isLoggedIn = false;
   }
 
   register(f: any) {
@@ -93,5 +96,9 @@ export class AuthService {
       console.log('Passwords are not the same!');
       this._userCred = true;
     }
+  }
+
+  isAuthenticated(): boolean {
+    return this.isLoggedIn;
   }
 }
