@@ -23,11 +23,15 @@
           </p>
         </div>
       </div>
-      <div class="add-to-cart" *ngIf="!product.addedToCart">
+      <div
+        class="add-to-cart"
+        (click)="addToCart(product)"
+        *ngIf="!product.addedToCart"
+      >
         <div class="cart-add-icon">
           <img src="../../../assets/images/icons/cart-add-icon.svg" alt="" />
         </div>
-        <p (click)="addToCart(product)">Dodaj do koszyka</p>
+        <p>Dodaj do koszyka</p>
       </div>
       <div class="product-info" *ngIf="product.addedToCart">
         Produkt został pomyślnie dodany do koszyka. Dziękujemy :)

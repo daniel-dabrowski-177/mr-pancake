@@ -31,16 +31,11 @@ export class ProductsComponent implements OnInit {
   }
 
   addToCart(product: any): void {
-    // if (this.authService.isAuthenticated()) {
-    //   console.log(this.cartService.cartItems);
-    // } else {
-    //   this.cartItems.push(product);
-    // }
-
     let arr = this.cartService.getCartItems();
     if (!arr.includes(product)) {
       this.cartService.addToCart(product);
       console.log(this.cartService.cartItems);
+      product.addedToCart = true; // Ustaw flagę na true, aby pokazać komunikat
     }
     let newArr = JSON.stringify(arr);
     localStorage.setItem('cart', newArr);

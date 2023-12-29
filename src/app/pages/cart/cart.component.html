@@ -21,7 +21,7 @@
             <p>Ilość:</p>
             <div class="counter">
               <button (click)="increment(cartItem)">+</button>
-              <div class="amount">{{ cartItem.quantity || 0 }}</div>
+              <div class="amount">{{ cartItem.quantity || 1 }}</div>
               <button (click)="decrement(cartItem)">-</button>
             </div>
           </div>
