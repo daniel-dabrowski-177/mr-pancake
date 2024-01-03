@@ -10,7 +10,7 @@
         <div class="details">
           <div class="row-1">
             <h4>{{ cartItem.name }}</h4>
-            <button>
+            <button (click)="removeItem(cartItem)">
               <img
                 src="../../../assets/images/icons/cart-remove-icon.svg"
                 alt="remove item"

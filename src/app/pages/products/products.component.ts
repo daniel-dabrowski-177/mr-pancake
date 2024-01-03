@@ -22,6 +22,8 @@ export class ProductsComponent implements OnInit {
     this.productService.getProducts().subscribe((data) => {
       this.products = data.map((product) => ({
         ...product,
+        quantity: 1,
+        username: this.authService.returnUser().email,
       }));
     });
   }
@@ -35,7 +37,7 @@ export class ProductsComponent implements OnInit {
     if (!arr.includes(product)) {
       this.cartService.addToCart(product);
       console.log(this.cartService.cartItems);
-      product.addedToCart = true; // Ustaw flagę na true, aby pokazać komunikat
+      product.addedToCart = true;
     }
     let newArr = JSON.stringify(arr);
     localStorage.setItem('cart', newArr);
