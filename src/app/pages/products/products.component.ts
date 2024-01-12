@@ -35,7 +35,7 @@ export class ProductsComponent implements OnInit {
     if (!arr.includes(product)) {
       this.cartService.addToCart(product);
       console.log(this.cartService.cartItems);
-      product.addedToCart = true; // Ustaw flagę na true, aby pokazać komunikat
+      product.addedToCart = true;
     }
     let newArr = JSON.stringify(arr);
     localStorage.setItem('cart', newArr);
