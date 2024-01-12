@@ -69,47 +69,105 @@
   <div class="reservation-wrapper">
     <section class="book-a-table">
       <h2>Zarezerwuj stolik</h2>
-      <form>
-        <div class="input-item">
-          <input type="text" id="name" />
+      <form (ngSubmit)="bookTable()">
+        <div class="input-item" [ngClass]="{ error: validationErrors.name }">
+          <input type="text" id="name" name="name" [(ngModel)]="Table.name" />
           <label for="name">imię i nazwisko</label>
+          <div *ngIf="validationErrors.name" class="error-message">
+            pole wymagane
+          </div>
         </div>
         <div class="container">
-          <div class="input-item">
-            <input type="text" id="phone" />
+          <div class="input-item" [ngClass]="{ error: validationErrors.phone }">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              [(ngModel)]="Table.phone"
+            />
             <label for="phone">numer telefonu</label>
+            <div *ngIf="validationErrors.phone" class="error-message">
+              pole wymagane
+            </div>
           </div>
-          <div class="input-item">
-            <input type="text" id="email" />
+          <div class="input-item" [ngClass]="{ error: validationErrors.email }">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              [(ngModel)]="Table.email"
+            />
             <label for="email">adres email</label>
+            <div *ngIf="validationErrors.email" class="error-message">
+              pole wymagane
+            </div>
           </div>
         </div>
         <div class="input-item-wrapper">
-          <div class="input-item">
-            <input type="date" id="date" />
+          <div class="input-item" [ngClass]="{ error: validationErrors.date }">
+            <input type="date" id="date" name="date" [(ngModel)]="Table.date" />
             <label for="date">data</label>
+            <div *ngIf="validationErrors.date" class="error-message">
+              pole wymagane
+            </div>
           </div>
-          <div class="input-item">
-            <input type="time" id="time" />
+          <div class="input-item" [ngClass]="{ error: validationErrors.time }">
+            <input type="time" id="time" name="time" [(ngModel)]="Table.time" />
             <label for="time">godzina</label>
+            <div *ngIf="validationErrors.time" class="error-message">
+              pole wymagane
+            </div>
           </div>
-          <div class="input-item">
-            <input type="number" id="guests" min="1" max="12" placeholder="1" />
+          <div
+            class="input-item"
+            [ngClass]="{ error: validationErrors.guests }"
+          >
+            <input
+              type="number"
+              id="guests"
+              min="1"
+              max="12"
+              placeholder="1"
+              name="guests"
+              [(ngModel)]="Table.guests"
+            />
             <label for="guests">liczba gości</label>
+            <div *ngIf="validationErrors.guests" class="error-message">
+              pole wymagane
+            </div>
           </div>
         </div>
         <div class="input-item-message">
-          <textarea name="text" id="message" cols="30" rows="5"></textarea>
+          <textarea
+            name="text"
+            id="message"
+            cols="30"
+            rows="5"
+            name="message"
+            [(ngModel)]="Table.message"
+          ></textarea>
           <label for="message">dodatkowa wiadomość</label>
         </div>
-        <div class="input-item-checkbox">
-          <input type="checkbox" id="checkbox" />
+        <div
+          class="input-item-checkbox"
+          [ngClass]="{ error: validationErrors.confirmed }"
+        >
+          <input
+            type="checkbox"
+            id="checkbox"
+            name="confirmed"
+            [(ngModel)]="Table.confirmed"
+          />
           <label for="checkbox"
             >Wyrażam zgodę na przetwarzanie przez Restaurację Starka podanych w
             formularzu danych osobowych. Więcej informacji dotyczących
             przetwarzania danych osobowych znajduje się na podstronie polityki
             prywatności.</label
           >
+          <div *ngIf="validationErrors.confirmed" class="error-message">
+            pole wymagane
+          </div>
         </div>
         <button type="submit">Zarezerwuj</button>
       </form>
