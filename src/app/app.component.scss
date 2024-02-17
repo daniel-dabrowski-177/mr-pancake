@@ -122,6 +122,15 @@ a:hover {
   font-family: OpenSans;
 }
 
+main {
+  margin: 50px 0 0 0;
+}
+
+.hero-title {
+  font-size: 60px;
+  margin: 0;
+}
+
 @media (min-width: 768px) {
   input {
     margin: 15px 0 0 0;
@@ -135,6 +144,9 @@ a:hover {
   hr {
     margin: 25px 0;
   }
+  .hero-title {
+    font-size: 110px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -143,5 +155,23 @@ a:hover {
   }
   p {
     font-size: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  h2 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 20px;
+  }
+  main {
+    .hero-title {
+      font-size: 210px;
+      margin: -150px 0 0 0;
+    }
+    hr:first-of-type {
+      display: none;
+    }
   }
 }

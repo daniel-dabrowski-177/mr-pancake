@@ -1,0 +1,43 @@
+.about-us,
+.about-history,
+.about-summary {
+  margin: 0 24px;
+
+  h2 {
+    text-align: center;
+    margin: 25px 0 15px 0;
+  }
+  p {
+    margin: 0;
+    font-family: OpenSans;
+  }
+  p:last-of-type {
+    margin: 0 0 70px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-us,
+  .about-history,
+  .about-summary {
+    margin: 0 100px;
+
+    h2 {
+      text-align: center;
+      margin: 40px 0 25px 0;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .about-us,
+  .about-history,
+  .about-summary {
+    margin: 0 205px;
+
+    h2 {
+      text-align: center;
+      margin: 50px 0 25px 0;
+    }
+  }
+}
