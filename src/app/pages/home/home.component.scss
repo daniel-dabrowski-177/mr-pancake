@@ -334,6 +334,24 @@
       margin: 25px auto 10px;
     }
   }
+
+  .opinion-added {
+    display: flex;
+    justify-content: center;
+    font-family: OpenSans;
+    font-weight: bold;
+    color: rgb(0, 211, 0);
+    margin: 20px 0;
+  }
+
+  .error-message {
+    display: flex;
+    justify-content: center;
+    font-family: OpenSans;
+    font-weight: bold;
+    color: rgb(211, 0, 0);
+    margin: 20px 0;
+  }
 }
 
 .map {

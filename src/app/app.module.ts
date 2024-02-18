@@ -25,6 +25,8 @@ import { MapComponent } from './components/map/map.component';
 import { AuthService } from './services/auth/auth.service';
 import { ProductsService } from './services/products/products.service';
 import { CartService } from './services/cart/cart.service';
+import { OpinionsService } from './services/opinions/opinions.service';
+
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
@@ -55,7 +57,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [AuthService, ProductsService, CartService],
+  providers: [AuthService, ProductsService, CartService, OpinionsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

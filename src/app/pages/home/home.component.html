@@ -242,51 +242,18 @@
     <div class="container">
       <h2>Opinie</h2>
       <div class="wrapper">
-        <div class="testimonial-card">
-          <p>
-            A visual guide could be a wireframe, creative composition,
-            or information architecture. A device that enables...
-          </p>
+        <div class="testimonial-card" *ngFor="let opinion of latestOpinions">
+          <p>{{ opinion.message }}</p>
           <div class="user">
             <img
               src="../../../assets/images/icons/image-placeholder-icon.png"
               alt=""
             />
             <div class="user-details">
-              <div class="user-name">John Carter</div>
-              <div class="user-desc">Head of Marketing</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p>
-            A visual guide could be a wireframe, creative composition,
-            or information architecture. A device that enables...
-          </p>
-          <div class="user">
-            <img
-              src="../../../assets/images/icons/image-placeholder-icon.png"
-              alt=""
-            />
-            <div class="user-details">
-              <div class="user-name">John Carter</div>
-              <div class="user-desc">Head of Marketing</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p>
-            A visual guide could be a wireframe, creative composition,
-            or information architecture. A device that enables...
-          </p>
-          <div class="user">
-            <img
-              src="../../../assets/images/icons/image-placeholder-icon.png"
-              alt=""
-            />
-            <div class="user-details">
-              <div class="user-name">John Carter</div>
-              <div class="user-desc">Head of Marketing</div>
+              <div class="user-name">{{ opinion.name }}</div>
+              <div class="user-desc">
+                {{ formatTimestamp(opinion.timestamp) }}r.
+              </div>
             </div>
           </div>
         </div>
@@ -298,9 +265,15 @@
     <section class="share">
       <div class="container">
         <h2>Podziel się swoją opinią</h2>
-        <form>
+        <form (ngSubmit)="addOpinion()">
           <div>
-            <input type="text" id="share-name" />
+            <input
+              type="text"
+              id="share-name"
+              [(ngModel)]="name"
+              name="name"
+              required
+            />
             <label for="share-name">imię</label>
           </div>
           <div>
@@ -309,13 +282,23 @@
               id="share-message"
               cols="30"
               rows="5"
+              [(ngModel)]="message"
+              name="message"
+              required
             ></textarea>
             <label for="share-message">wiadomość</label>
           </div>
-          <button>Wyślij</button>
+          <button type="submit">Wyślij</button>
+          <div class="error-message" *ngIf="errorMessage">
+            {{ errorMessage }}
+          </div>
         </form>
+        <div class="opinion-added" *ngIf="opinionAdded">
+          Opinia została dodana pomyślnie!
+        </div>
       </div>
     </section>
+
     <hr />
     <section class="map">
       <h2>Wpadnij do nas!</h2>

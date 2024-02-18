@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { OpinionsService } from 'src/app/services/opinions/opinions.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  // Book-a-table section
   Table = {
     name: '',
     phone: '',
@@ -55,5 +58,46 @@ export class HomeComponent {
     }
 
     console.log(this.Table);
+  }
+
+  // Opinions section
+  name: string = '';
+  message: string = '';
+  opinionAdded: boolean = false;
+  errorMessage: string = '';
+
+  constructor(private opinionsService: OpinionsService) {}
+
+  addOpinion(): void {
+    if (this.name.trim() === '' || this.message.trim() === '') {
+      this.errorMessage = 'Wypełnij wszystkie pola';
+    } else {
+      this.errorMessage = ''; // Wyczyść komunikat błędu, jeśli pola są wypełnione
+      this.opinionsService
+        .addOpinion(this.name, this.message)
+        .then(() => {
+          this.name = '';
+          this.message = '';
+          this.opinionAdded = true; // Ustawienie wartości na true po pomyślnym dodaniu opinii
+          console.log('Opinia dodana pomyślnie');
+        })
+        .catch((error) =>
+          console.error('Błąd podczas dodawania opinii:', error)
+        );
+    }
+  }
+
+  // Testimonials section
+  latestOpinions: any[] = [];
+  datePipe: DatePipe = new DatePipe('en-US');
+
+  ngOnInit(): void {
+    this.opinionsService.getOpinions().subscribe((opinions) => {
+      this.latestOpinions = opinions.slice(0, 3); // Pobierz trzy najnowsze opinie
+    });
+  }
+
+  formatTimestamp(timestamp: any): string {
+    return this.datePipe.transform(timestamp.toDate(), 'dd.MM.yyyy') || '';
   }
 }
