@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 
@@ -10,5 +10,9 @@ export class ProductsService {
 
   getProducts(): Observable<any[]> {
     return this.firestore.collection('items').valueChanges();
+  }
+
+  getCoffees(): Observable<any[]> {
+    return this.firestore.collection('coffees').valueChanges();
   }
 }

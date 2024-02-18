@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class ProductsComponent implements OnInit {
   products: any[] = [];
-  private cartItems: any[] = [];
+  cartItems: any[] = [];
 
   constructor(
     private productService: ProductsService,

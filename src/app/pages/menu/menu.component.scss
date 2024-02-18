@@ -1,0 +1,135 @@
+.menu {
+  background-image: url(../../../assets/images/background/menu.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 110px 0 0 0;
+
+  .background-title {
+    display: flex;
+    justify-content: center;
+
+    h2 {
+      padding: 20px 80px;
+      background-color: #272727;
+      border: 2px solid #d1ab7d;
+      border-radius: 10px;
+      margin: 50px auto 30px;
+    }
+  }
+
+  .background-menu {
+    display: flex;
+    justify-content: center;
+
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #272727;
+      border: 2px solid #d1ab7d;
+      border-radius: 10px;
+      margin: 0 24px 40px;
+      padding: 0 20px;
+      max-width: 500px;
+      width: 100%;
+
+      .menu-headers {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        gap: 10px;
+
+        .menu-cat {
+          display: flex;
+          justify-content: space-between;
+          margin: 0 10px;
+          h3 {
+            color: #d1ab7d;
+          }
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          justify-content: space-between;
+
+          li {
+            font-family: PirataOne;
+            font-size: 24px;
+            margin: 0 10px;
+            cursor: default;
+          }
+
+          .menu-item-price {
+            min-width: 40px;
+          }
+        }
+
+        ul:hover {
+          color: #d1ab7d;
+          transition: color ease-in-out 0.2s;
+        }
+
+        .col-1 {
+          text-align: center;
+          justify-content: center;
+          text-align: left;
+          margin: 0 7%;
+          flex: 2;
+
+          h3 {
+            margin: 30px 0 20px;
+          }
+        }
+      }
+
+      .menu-headers:last-of-type {
+        margin: 0 0 30px 0;
+      }
+
+      .menu-logo {
+        margin: 10px auto;
+        width: 100%;
+        max-width: 320px;
+
+        h2 {
+          font-family: IngridDarling;
+          font-size: 60px;
+          margin: 0;
+        }
+
+        hr {
+          margin: 4px 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .menu {
+    .background-menu {
+      .menu-container {
+        .menu-headers {
+          .col-1,
+          .col-2 {
+            h3 {
+              margin: 50px 0 20px;
+            }
+          }
+        }
+        .menu-headers:last-of-type {
+          margin: 0 0 50px 0;
+        }
+      }
+    }
+  }
+}

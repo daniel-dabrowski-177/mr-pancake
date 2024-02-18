@@ -1,2 +1,44 @@
-<p>menu works!</p>
-<div class="information">We are currently working on this page...</div>
+<main>
+  <section class="menu">
+    <div class="background-title">
+      <h2>MENU</h2>
+    </div>
+
+    <div class="background-menu">
+      <div class="menu-container">
+        <div class="menu-headers">
+          <div class="col-1">
+            <div class="menu-cat">
+              <h3>Coffees</h3>
+              <h3>Price</h3>
+            </div>
+            <ul class="menu-items" *ngFor="let coffee of coffees">
+              <li class="menu-item">{{ coffee.name }}</li>
+              <li class="menu-item menu-item-price">{{ coffee.price }} zł</li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu-logo">
+          <hr />
+          <hr />
+          <hr />
+          <h2>Mr.Pancake</h2>
+          <hr />
+          <hr />
+        </div>
+        <div class="menu-headers">
+          <div class="col-1">
+            <div class="menu-cat">
+              <h3>Pancakes</h3>
+              <h3>Price</h3>
+            </div>
+            <ul class="menu-items" *ngFor="let pancake of pancakes">
+              <li class="menu-item">{{ pancake.name }}</li>
+              <li class="menu-item menu-item-price">{{ pancake.price }} zł</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
